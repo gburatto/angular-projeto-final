@@ -15,3 +15,8 @@
   top: 0;
   z-index: 1;
 }
+
+a[mat-list-item].active::before {
+  background-color: var(--mdc-list-list-item-focus-state-layer-color);
+  opacity: var(--mdc-list-list-item-focus-state-layer-opacity);
+}
