@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { map } from 'rxjs';
+import { FavoritoService } from '../../services/favorito.service';
 
 @Component({
   selector: 'app-home',
@@ -18,6 +19,9 @@ import { map } from 'rxjs';
   styleUrl: './home.component.css',
 })
 export class HomeComponent {
+
+  private favoritoService = inject(FavoritoService);
+  public favoritos$ = this.favoritoService.getAll();
 
   private breakpointObserver = inject(BreakpointObserver);
 
