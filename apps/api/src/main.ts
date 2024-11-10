@@ -6,6 +6,8 @@
 import express from 'express';
 import * as path from 'path';
 
+import cors from 'cors';
+
 import { MongoClient } from 'mongodb';
 
 MongoClient.connect(
@@ -18,6 +20,9 @@ MongoClient.connect(
 });
 
 const app = express();
+
+// Adiciona como primeiro middleware de forma que também será o último:
+app.use(cors());  // O middleware adiciona header HTTP CORS de resposta.
 
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
 
