@@ -9,6 +9,10 @@ const routes: Routes = [
     pathMatch: 'full',
     component: FormFavoritoComponent,
   },
+  {
+    path: ':id',
+    component: FormFavoritoComponent,
+  }
 ];
 
 @NgModule({
