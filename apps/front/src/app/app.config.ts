@@ -3,7 +3,7 @@ import {
   importProvidersFrom,
   InjectionToken,
 } from '@angular/core';
-import { provideRouter } from '@angular/router';
+import { provideRouter, withComponentInputBinding } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
 import { appRoutes } from './app.routes';
@@ -13,7 +13,10 @@ export const API_BASE = new InjectionToken<string>('URL base do back end');
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideRouter(appRoutes),
+    provideRouter(
+      appRoutes,
+      withComponentInputBinding(),
+    ),
     provideAnimationsAsync(),
     importProvidersFrom(HttpClientModule),
     {
