@@ -6,6 +6,7 @@ import { Observable, share } from 'rxjs';
 import { IFavorito } from '@nx-monorepo/comum';
 
 import { API_BASE } from '../../../app.config';
+import { WithoutId } from 'mongodb';
 
 @Injectable({
   providedIn: 'root'
@@ -30,6 +31,19 @@ export class FavoritoEdicaoService {
     );
 
     // Dispara a requisição:
+    req$.subscribe();
+
+    return req$;
+  }
+
+  public post(iFavorito: IFavorito): Observable<IFavorito> {
+    const req$ = this.httpClient.post<IFavorito>(
+      `${this.apiBase}/favorito/`,
+      iFavorito,
+    ).pipe(
+      share(),
+    );
+
     req$.subscribe();
 
     return req$;
