@@ -8,6 +8,8 @@ import * as path from 'path';
 
 import cors from 'cors';
 
+import { json } from 'body-parser';
+
 import { MongoClient } from 'mongodb';
 
 import { favoritoRouter } from './routes/favorito.router';
@@ -25,6 +27,9 @@ const app = express();
 
 // Adiciona como primeiro middleware de forma que também será o último:
 app.use(cors());  // O middleware adiciona header HTTP CORS de resposta.
+
+// Processa corpo da requisição HTTP antes da rotas que necessitam dele:
+app.use(json());
 
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
 
