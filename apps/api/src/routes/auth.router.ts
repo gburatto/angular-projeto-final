@@ -7,6 +7,8 @@ import {
 } from "@nx-monorepo/comum";
 import { getCollection } from "../util/get-collection";
 
+const SENHA_SECRETA = 's3nh4S3crEt4';
+
 export const authRouter = Router();
 
 authRouter.post('/login', async (req: Request, res: Response, next: NextFunction) => {
@@ -20,6 +22,7 @@ authRouter.post('/login', async (req: Request, res: Response, next: NextFunction
 
   if (usuario) {
     const iUsuarioLogado: IUsuarioLogado = {
+      // <<<
       usuario: usuario,
     };
     res.json(iUsuarioLogado);
