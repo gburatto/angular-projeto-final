@@ -10,6 +10,8 @@ import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { RouterModule, RouterOutlet } from '@angular/router';
 
+import { AuthService } from '@nx-monorepo/auth';
+
 @Component({
   selector: 'app-layout',
   templateUrl: './layout.component.html',
@@ -28,6 +30,8 @@ import { RouterModule, RouterOutlet } from '@angular/router';
 })
 export class LayoutComponent {
   private breakpointObserver = inject(BreakpointObserver);
+
+  public authService = inject(AuthService);
 
   isXSmall$: Observable<boolean> = this.breakpointObserver.observe(
     Breakpoints.XSmall,
