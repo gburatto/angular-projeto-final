@@ -5,7 +5,7 @@ import { Observable, share } from 'rxjs';
 
 import { IFavorito } from '@nx-monorepo/comum';
 
-import { API_BASE } from '../../../app.config';
+import { API_BASE } from '@nx-monorepo/auth';
 import { WithoutId } from 'mongodb';
 
 @Injectable({
