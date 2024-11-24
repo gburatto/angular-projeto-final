@@ -7,14 +7,15 @@
   <div style="display: inline-block; width: 100%; max-width: 20em;">
     <form
       style="display: flex; flex-direction: column;"
+      [formGroup]="formGroup"
     >
       <mat-form-field>
         <mat-label>Usuário</mat-label>
-        <input matInput>
+        <input matInput formControlName="login">
       </mat-form-field>
       <mat-form-field>
         <mat-label>Senha</mat-label>
-        <input matInput [type]="hide ? 'password' : 'text'">
+        <input matInput formControlName="senha" [type]="hide ? 'password' : 'text'">
         <button
           mat-icon-button
           matSuffix
@@ -32,6 +33,7 @@
       mat-fab
       extended
       type="submit"
+      [disabled]="formGroup.invalid"
     >
       <mat-icon>login</mat-icon>
       Login
