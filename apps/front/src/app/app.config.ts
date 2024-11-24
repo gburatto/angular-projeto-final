@@ -18,7 +18,6 @@ export const appConfig: ApplicationConfig = {
       withComponentInputBinding(),
     ),
     provideAnimationsAsync(),
-    importProvidersFrom(HttpClientModule),
     {
       provide: API_BASE,
       useValue: 'http://localhost:3333/api',
