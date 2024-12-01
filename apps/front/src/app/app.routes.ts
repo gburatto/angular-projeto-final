@@ -1,18 +1,18 @@
 import { Route } from '@angular/router';
 
-import { HomeComponent } from './components/home/home.component';
+import { CardapioComponent } from './components/cardapio/cardapio.component';
 import { SobreComponent } from './components/sobre/sobre.component';
 
 export const appRoutes: Route[] = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: '/home',
+    redirectTo: '/cardapio',
   },
   {
-    title: 'Meus favoritos',
-    path: 'home',
-    component: HomeComponent,
+    title: 'Cardápio',
+    path: 'cardapio',
+    component: CardapioComponent,
   },
   {
     title: 'Sobre',
