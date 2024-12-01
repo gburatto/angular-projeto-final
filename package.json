@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "start": "nx run-many --target=serve --projects=front,api --parallel",
-    "start:front": "nx run-many --target=serve --projects=front --parallel",
+    "start:front": "nx run-many --target=serve --projects=front --parallel -- --poll=500",
     "start:api": "nx run-many --target=serve --projects=api --parallel",
     "build": "nx run-many --target=build --projects=front",
     "test": "nx run-many --target=test --projects=front"
