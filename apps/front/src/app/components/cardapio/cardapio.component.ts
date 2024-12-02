@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
+import { PratoService } from '../../services/prato.service';
 
 @Component({
   selector: 'app-cardapio',
@@ -12,4 +13,9 @@ import { MatCardModule } from '@angular/material/card';
   templateUrl: './cardapio.component.html',
   styleUrl: './cardapio.component.css',
 })
-export class CardapioComponent {}
+export class CardapioComponent {
+
+  private pratoService = inject(PratoService);
+  public prato$ = this.pratoService.getAll();
+  
+}
