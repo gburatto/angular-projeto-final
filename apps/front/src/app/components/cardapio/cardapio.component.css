@@ -1,0 +1,36 @@
+.container{
+  display: flex;
+}
+
+.imagem{
+  align-content: center;
+  padding: .5em;
+  border-radius: .5em;
+}
+
+.descricao{
+  flex-grow: 1;
+}
+
+.preco{
+  font-weight: 500;
+  font-size: medium;
+  text-align: right;
+  padding-top: .5em;
+  width: 5em;
+}
+
+img{
+  object-fit: cover;
+}
+
+mat-card{
+  margin: 1em;
+  padding: 0em;
+}
+
+mat-card-header{
+  padding-top: .8em;
+}
+
+
