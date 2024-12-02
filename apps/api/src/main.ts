@@ -12,13 +12,13 @@ import { json } from 'body-parser';
 
 import { MongoClient } from 'mongodb';
 
-import { favoritoRouter } from './routes/favorito.router';
+import { pratoRouter } from './routes/prato.router';
 import { authRouter } from './routes/auth.router';
 
 MongoClient.connect(
-  'mongodb://angular-aula03-2023-2_devcontainer-db-1/',
+  'mongodb://angular-projeto-final_devcontainer-db-1/',
 ).then((client: MongoClient) => {
-  app.locals.db = client.db('app-favoritos');
+  app.locals.db = client.db('app-cardapio');
   console.log('Conectado ao MongoDB');
 }).catch(err => {
   console.error(err);
@@ -40,7 +40,7 @@ app.get('/api', (req, res) => {
 
 app.use('/api/auth', authRouter);
 
-app.use('/api/favorito', favoritoRouter);
+app.use('/api/prato', pratoRouter);
 
 const port = process.env.PORT || 3333;
 const server = app.listen(port, () => {
