@@ -33,4 +33,21 @@ mat-card-header{
   padding-top: .8em;
 }
 
+mat-card-subtitle{
+  font-weight: 500;
+  font-size: small;
+}
+
+mat-card-title-group{
+  margin-bottom: .2em;
+}
+
+.vegetariano{
+  color: lightgreen;
+}
+
+.nao-vegetariano{
+  color: lightcoral
+}
+
 
