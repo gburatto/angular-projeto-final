@@ -4,9 +4,10 @@ import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
 import { PratoService } from '../../services/prato.service';
 import { VegetarianoPipe } from '../../pipes/vegetariano/vegetariano.pipe';
-import { Observable } from 'rxjs';
-import { IPrato } from '@nx-monorepo/comum';
 import { FiltrarPorTipoPipe } from '../../pipes/filtrar-por-tipo/filtrar-por-tipo.pipe';
+import { RouterModule } from '@angular/router';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-cardapio',
@@ -15,8 +16,11 @@ import { FiltrarPorTipoPipe } from '../../pipes/filtrar-por-tipo/filtrar-por-tip
     CommonModule,
     MatCardModule,
     MatChipsModule,
+    MatIconModule,
+    MatButtonModule,
     VegetarianoPipe,
     FiltrarPorTipoPipe,
+    RouterModule,
   ],
   templateUrl: './cardapio.component.html',
   styleUrl: './cardapio.component.css',

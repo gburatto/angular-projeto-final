@@ -56,4 +56,12 @@ mat-card-title-group{
   color: lightcoral
 }
 
+.botao-editar{
+  position: absolute;
+  bottom: 15px; /* Ajuste o valor conforme necessário */
+  right: 10px;
+}
 
+.texto-descricao{
+  width: 80%;
+}

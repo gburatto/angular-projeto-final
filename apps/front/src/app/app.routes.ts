@@ -20,6 +20,12 @@ export const appRoutes: Route[] = [
     component: SobreComponent,
   },
   {
+    path: 'prato-edicao',
+    loadChildren: () => import(
+      './modules/prato-edicao/prato-edicao.module',
+    ).then(m => m.PratoEdicaoModule),
+  },
+  {
     path: 'favorito-edicao',
     loadChildren: () => import(
       './modules/favorito-edicao/favorito-edicao.module',

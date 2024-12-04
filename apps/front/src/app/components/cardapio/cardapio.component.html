@@ -26,7 +26,17 @@
         </mat-card-title-group>
       </mat-card-header>
       <mat-card-content>
-        {{p.descricao}}
+        <div class="texto-descricao">{{p.descricao}}</div>
+        <div>
+          <button
+              class="botao-editar"
+              mat-stroked-button
+              routerLink="/prato-edicao/{{p._id}}"
+            >
+              <mat-icon>edit</mat-icon>
+              Editar
+          </button>
+        </div>
       </mat-card-content>
     </div>
   </div>

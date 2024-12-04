@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 
 import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
@@ -23,6 +23,12 @@ import { MatCardModule } from '@angular/material/card';
   ]
 })
 export class FormPratoComponent {
+
+  @Input({
+    required: true,
+  })
+  public id!: string;
+
   private fb = inject(FormBuilder);
   addressForm = this.fb.group({
     company: null,
