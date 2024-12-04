@@ -6,6 +6,7 @@ import { PratoService } from '../../services/prato.service';
 import { VegetarianoPipe } from '../../pipes/vegetariano/vegetariano.pipe';
 import { Observable } from 'rxjs';
 import { IPrato } from '@nx-monorepo/comum';
+import { FiltrarPorTipoPipe } from '../../pipes/filtrar-por-tipo/filtrar-por-tipo.pipe';
 
 @Component({
   selector: 'app-cardapio',
@@ -15,6 +16,7 @@ import { IPrato } from '@nx-monorepo/comum';
     MatCardModule,
     MatChipsModule,
     VegetarianoPipe,
+    FiltrarPorTipoPipe,
   ],
   templateUrl: './cardapio.component.html',
   styleUrl: './cardapio.component.css',
@@ -26,16 +28,5 @@ export class CardapioComponent {
 
   public tipos = ['Pratos Principais', 'Porções', 'Sobremesas'];
   public tipoSelecionado: string | null =  null;
-
-  public pratosFiltrados$: Observable<IPrato[]>;
-
-  constructor() {
-    this.pratosFiltrados$ = this.pratoService.getByType(null);
-  }
-
-  public filtrarPorTipo(tipo: string | null): void {
-    this.tipoSelecionado = this.tipoSelecionado === tipo ? null : tipo;
-    this.pratosFiltrados$ = this.pratoService.getByType(this.tipoSelecionado);
-  }
 
 }
