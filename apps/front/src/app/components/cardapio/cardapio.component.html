@@ -1,4 +1,16 @@
-<mat-card *ngFor="let p of (prato$ | async)" class="example-card">
+<div class="filtros">
+  <mat-chip-set>
+    <mat-chip-option
+      *ngFor="let t of tipos"
+      color="accent"
+      [selected]="t === tipoSelecionado"
+      (click)="filtrarPorTipo(t)"
+    >
+      {{t}}
+    </mat-chip-option>
+  </mat-chip-set>
+</div>
+<mat-card *ngFor="let p of (pratosFiltrados$ | async)" class="example-card">
   <div class="container">
     <div class="imagem">
       <img mat-card-sm-image src="{{p.imagem}}">
