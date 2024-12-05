@@ -1,4 +1,4 @@
-use('app-favoritos');
+use('app-cardapio');
 
 db.usuarios.drop();
 
@@ -12,9 +12,9 @@ db.usuarios.insertMany([
   },
   {
     '_id': 2,
-    'login': 'rui',
-    'senha': 'professor',
-    'nome': 'Rui Pimentel',
+    'login': 'gustavo',
+    'senha': 'buratto',
+    'nome': 'Gustavo Buratto',
     'administrador': false,
   },
 ]);
