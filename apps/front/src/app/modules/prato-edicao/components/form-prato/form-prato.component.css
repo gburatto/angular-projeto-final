@@ -25,3 +25,15 @@
 .col:last-child {
   margin-right: 0;
 }
+
+form {
+  padding: 0 1em;
+}
+
+.selecao{
+  padding-bottom: 1em;
+}
+
+mat-card-title{
+  padding-bottom: .5em;
+}
