@@ -61,6 +61,12 @@ export class FormPratoComponent implements OnInit{
       this.pratoEdicaoService.put(iPrato).subscribe(() => {
         this.router.navigate([ '/' ]);
       });
+
+    // Se for um favorito novo:
+    } else {
+      this.pratoEdicaoService.post(iPrato).subscribe(() => {
+        this.router.navigate([ '/' ]);
+      });
     }
   }
 

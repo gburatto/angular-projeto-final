@@ -28,7 +28,21 @@ export class PratoEdicaoService {
 
     // Dispara a requisição:
     req$.subscribe();
-    
+
+    return req$;
+  }
+
+  public post(iPrato: IPrato): Observable<IPrato> {
+    const req$ = this.httpClient.post<IPrato>(
+      `${this.apiBase}/prato/`,
+      iPrato,
+    ).pipe(
+      share(),
+    );
+
+    // Dispara a requisição:
+    req$.subscribe();
+
     return req$;
   }
 
