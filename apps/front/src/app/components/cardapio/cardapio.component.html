@@ -27,7 +27,7 @@
       </mat-card-header>
       <mat-card-content>
         <div class="texto-descricao">{{p.descricao}}</div>
-        <div>
+        <div *ngIf="(authService.logado$ | async) === true">
           <button
               class="botao-editar"
               mat-stroked-button

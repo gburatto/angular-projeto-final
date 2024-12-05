@@ -8,6 +8,7 @@ import { FiltrarPorTipoPipe } from '../../pipes/filtrar-por-tipo/filtrar-por-tip
 import { RouterModule } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { AuthService } from '@nx-monorepo/auth';
 
 @Component({
   selector: 'app-cardapio',
@@ -26,6 +27,8 @@ import { MatButtonModule } from '@angular/material/button';
   styleUrl: './cardapio.component.css',
 })
 export class CardapioComponent {
+
+  public authService = inject(AuthService);
 
   private pratoService = inject(PratoService);
   public prato$ = this.pratoService.getAll();
