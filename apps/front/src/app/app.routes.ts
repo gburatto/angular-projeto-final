@@ -26,12 +26,6 @@ export const appRoutes: Route[] = [
     ).then(m => m.PratoEdicaoModule),
   },
   {
-    path: 'favorito-edicao',
-    loadChildren: () => import(
-      './modules/favorito-edicao/favorito-edicao.module',
-    ).then(m => m.FavoritoEdicaoModule),
-  },
-  {
     path: '',
     pathMatch: 'prefix',
     redirectTo: '/sobre',
