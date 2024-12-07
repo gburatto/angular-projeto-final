@@ -82,3 +82,8 @@ mat-card-title-group{
 mat-card{
   background-color: rgb(27, 39, 27);
 }
+
+.titulo{
+  text-align: center;
+  margin-top: 1.2em;
+}
