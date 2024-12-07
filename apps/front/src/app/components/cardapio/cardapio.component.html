@@ -1,18 +1,21 @@
 <div class="filtros">
-  <mat-chip-set>
-    <mat-chip-option
-      *ngFor="let t of tipos"
-      color="accent"
-      [selected]="t === tipoSelecionado"
-      (click)="tipoSelecionado = (tipoSelecionado === t ? null : t)"
-    >
-      {{t}}
-    </mat-chip-option>
-  </mat-chip-set>
+  <div class="filtros-container">
+    <mat-chip-set>
+      <mat-chip-option
+        *ngFor="let t of tipos"
+        [class]="(isXSmall$ | async) ? 'botao-filtro-xs' : 'botao-filtro'"
+        color="accent"
+        [selected]="t === tipoSelecionado"
+        (click)="tipoSelecionado = (tipoSelecionado === t ? null : t)"
+      >
+        {{t}}
+      </mat-chip-option>
+    </mat-chip-set>
+  </div>
 </div>
 <mat-card *ngFor="let p of ((prato$ | async) || [] | filtrarPorTipo: tipoSelecionado)" class="example-card">
   <div class="container">
-    <div class="imagem">
+    <div *ngIf="(isXSmall$ | async) === false" class="imagem">
       <img mat-card-sm-image src="{{p.imagem}}">
     </div>
     <div class="descricao">
@@ -26,10 +29,14 @@
         </mat-card-title-group>
       </mat-card-header>
       <mat-card-content>
-        <div class="texto-descricao">{{p.descricao}}</div>
+        <div
+          [class]="(isSmall$ | async) ? 'texto-descricao-sm' : 'texto-descricao'"
+        >
+          {{p.descricao}}
+        </div>
         <div *ngIf="(authService.logado$ | async) === true">
           <button
-              class="botao-editar"
+              [class]="(isSmall$ | async) ? 'botao-editar-sm' : 'botao-editar'"
               mat-stroked-button
               routerLink="/prato-edicao/{{p._id}}"
             >

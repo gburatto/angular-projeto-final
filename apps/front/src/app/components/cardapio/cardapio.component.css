@@ -45,7 +45,16 @@ mat-card-title-group{
 .filtros {
   display: flex;
   justify-content: center;
+  align-items: center;
   padding-top: .5em;
+}
+
+.botao-filtro-xs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .vegetariano{
@@ -60,6 +69,10 @@ mat-card-title-group{
   position: absolute;
   bottom: 15px; /* Ajuste o valor conforme necessário */
   right: 10px;
+}
+
+.botao-editar-sm{
+  margin-top: .5em;
 }
 
 .texto-descricao{

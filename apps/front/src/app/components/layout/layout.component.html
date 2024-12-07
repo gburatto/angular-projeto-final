@@ -28,42 +28,75 @@
       <span class="spacer"></span>
 
       @if ((authService.logado$ | async) === true) {
-        <button
-          type="button"
-          mat-fab
-          extended
-          aria-label="Editar o prato"
-          routerLink="/prato-edicao"
-          routerLinkActive="oculto"
-        >
-          <mat-icon>bookmark_add</mat-icon>
-          Novo
-        </button>
+        @if (!(isXSmall$ | async)) {
+          <button
+            type="button"
+            class="botao-adicionar"
+            mat-flat-button
+            color="accent"
+            aria-label="Adicionar prato"
+            routerLink="/prato-edicao"
+            routerLinkActive="oculto"
+          >
+            <mat-icon>add</mat-icon>
+            Novo
+          </button>
+        } @else {
+          <button
+            type="button"
+            class="botao-adicionar-xs"
+            aria-label="Adicionar prato"
+            routerLink="/prato-edicao"
+            routerLinkActive="oculto"
+          >
+            <mat-icon>add</mat-icon>
+          </button>
+        }
       }
 
       @if ((authService.logado$ | async) === false) {
-        <button
-          type="button"
-          mat-button
-          aria-label="Fazer login na aplicação"
-          routerLink="/auth"
-          routerLinkActive="oculto"
-        >
-          <mat-icon>login</mat-icon>
-          Fazer login
-        </button>
+        @if (!(isXSmall$ | async)) {
+          <button
+            type="button"
+            mat-button
+            aria-label="Fazer login na aplicação"
+            routerLink="/auth"
+            routerLinkActive="oculto"
+          >
+            <mat-icon>login</mat-icon>
+              Fazer login
+          </button>
+        } @else {
+          <button
+            type="button"
+            mat-icon-button
+            aria-label="Fazer login na aplicação"
+            routerLink="/auth"
+            routerLinkActive="oculto"
+          >
+            <mat-icon>login</mat-icon>
+          </button>
+        }
       } @else {
-        <button
-          mat-flat-button
-          color="warn"
-          (click)="authService.logout()"
-        >
-          <mat-icon>logout</mat-icon>
-          Fazer logout
-        </button>
+        @if (!(isXSmall$ | async)) {
+          <button
+            mat-flat-button
+            color="warn"
+            (click)="authService.logout()"
+          >
+            <mat-icon>logout</mat-icon>
+            Fazer logout
+          </button>
+        } @else {
+          <button
+            class="botao-logout-xs"
+            (click)="authService.logout()"
+          >
+            <mat-icon>logout</mat-icon>
+          </button>
+        }
       }
     </mat-toolbar>
-    <!-- Add Content Here -->
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>

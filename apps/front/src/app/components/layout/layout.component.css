@@ -32,3 +32,31 @@ mat-toolbar.mat-toolbar.mat-primary {
 .oculto {
   display: none;
 }
+
+.botao-logout-xs{
+  background-color: #f44336;
+  color: white;
+  border-style: none;
+  border-radius: .5em;
+  padding: .4em .5em;
+}
+
+.botao-logout-xs:hover{
+  background-color: #f85448;
+}
+
+.botao-adicionar{
+  margin-right: .5em !important;
+}
+
+.botao-adicionar-xs{
+  background-color: #69f0ae;
+  margin-right: .5em;
+  border-style: none;
+  border-radius: .5em;
+  padding: .4em .5em;
+}
+
+.botao-adicionar-xs:hover{
+  background-color: #87fac2;
+}
