@@ -60,3 +60,15 @@ mat-toolbar.mat-toolbar.mat-primary {
 .botao-adicionar-xs:hover{
   background-color: #87fac2;
 }
+
+.menu{
+  background-color: rgb(50, 110, 55);
+}
+
+.mat-sidenav-container{
+  background-color: rgb(39, 56, 39);
+}
+
+.mat-sidenav{
+  background-color: rgb(59, 33, 33);
+}

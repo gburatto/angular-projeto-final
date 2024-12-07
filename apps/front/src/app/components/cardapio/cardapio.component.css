@@ -78,3 +78,7 @@ mat-card-title-group{
 .texto-descricao{
   width: 80%;
 }
+
+mat-card{
+  background-color: rgb(27, 39, 27);
+}

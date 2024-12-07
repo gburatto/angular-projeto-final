@@ -37,3 +37,11 @@ form {
 mat-card-title{
   padding-bottom: .5em;
 }
+
+mat-card{
+  background-color: rgb(27, 39, 27);
+}
+
+button{
+  margin: .4em;
+}
