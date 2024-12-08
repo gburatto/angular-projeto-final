@@ -64,3 +64,7 @@ npm run start:front
 ```
 npm run start:api
 ```
+
+* Logar na aplicação:
+
+Utilizar um dos usuários descritos em `usuarios.mongodb`, por exemplo usuário `admin` e senha `admin`.
